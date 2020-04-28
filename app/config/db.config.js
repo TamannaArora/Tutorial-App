@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: "localhost",
+    HOST: "172.16.13.72",
     USER: "postgres",
     PASSWORD: "root",
     DB: "NodeTask",
