@@ -5,6 +5,9 @@ module.exports = app => {
     //create a new turorial
     router.post("/", users.createUser);
     router.get("/", users.getUsers);
-    router.get("/", users.findUsers);
+
+    //to statically get all users with age 32
+    router.get("/age", users.getUSersByAge);
+
     app.use('/api/users', router);
 };
