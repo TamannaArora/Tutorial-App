@@ -1,6 +1,6 @@
 const db = require('../models');
 const User = db.users;
-
+const Op = db.Sequelize.Op;
 
 exports.createUser = (req,res) => {
     const payload = require("../seeds/seedData.json");
@@ -21,3 +21,19 @@ exports.getUsers = (req, res) => {
         });
       });
 }
+
+exports.findUsers = (req, res) => {
+    const age = req.query.age;
+    var condition = age ? { age: { [Op.lte]: `%${age}%` } } : null;
+  
+    User.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving tutorials."
+        });
+      });
+  };
