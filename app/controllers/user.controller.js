@@ -7,6 +7,7 @@ exports.createUser = (req,res) => {
     User.bulkCreate(payload).then(() => { // Notice: There are no arguments here, as of right now you'll have to...
         return 'hii';
     })
+}
 
 exports.getUsers = (req, res) => {
     User.findAll()
@@ -19,5 +20,4 @@ exports.getUsers = (req, res) => {
             err.message || "Some error occurred while retrieving users."
         });
       });
-}
 }

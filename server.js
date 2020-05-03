@@ -23,9 +23,9 @@ app.get('/', function(req, res) {
     res.send('Hi There')
 });
 
-require("./app/routes/tutorial.routes")(app);
-// require("./app/routes/user.routes")(app);
-const port = 3000
+// require("./app/routes/tutorial.routes")(app);
+require("./app/routes/user.routes")(app);
+const port = 8000
 
 app.listen(port, function() {
     console.log('Server running on port ${port}')
