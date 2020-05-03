@@ -2,7 +2,7 @@ const db = require('../models')
 const Tutorial = db.tutorials;
 
 //Create and save a new tutorial
-exports.create = (req, res) => {
+exports.createTutorial = (req, res) => {
     //validate the request
     if(!req.body.title) {
         res.status(404).send({

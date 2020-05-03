@@ -24,6 +24,7 @@ app.get('/', function(req, res) {
 });
 
 require("./app/routes/tutorial.routes")(app);
+// require("./app/routes/user.routes")(app);
 const port = 3000
 
 app.listen(port, function() {
