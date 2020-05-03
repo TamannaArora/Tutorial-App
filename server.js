@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var express = require('express');
 var bodyParser = require("body-parser");
 var cors = require("cors");
@@ -23,10 +25,9 @@ app.get('/', function(req, res) {
     res.send('Hi There')
 });
 
-// require("./app/routes/tutorial.routes")(app);
+require("./app/routes/tutorial.routes")(app);
 require("./app/routes/user.routes")(app);
-const port = 8000
 
-app.listen(port, function() {
+app.listen(process.env.port, function() {
     console.log('Server running on port ${port}')
 })

@@ -1,9 +1,9 @@
 module.exports = {
-    HOST: "172.16.13.72",
-    USER: "postgres",
-    PASSWORD: "root",
-    DB: "NodeTask",
-    dialect: "postgres",
+    HOST: process.env.HOST,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DB: process.env.DB,
+    dialect: process.env.dialect,
     pool: {
       max: 5,
       min: 0,
